@@ -1,0 +1,14 @@
+Source: vma
+Section: unknown
+Priority: optional
+Maintainer: john <johnz@lunarg.com>
+Build-Depends: debhelper-compat (= 10)
+Standards-Version: 4.4.1
+Homepage: https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
+Vcs-Browser: https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
+Vcs-Git: https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
+
+Package: vma
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Easy to integrate Vulkan memory allocation library.
