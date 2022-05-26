@@ -1,3 +1,9 @@
+vma (3.0.0+18~rc1-1lunarg18.04-1) bionic; urgency=medium
+
+  * UNRELEASED
+
+ -- john <john@odin>  Thu, 26 May 2022 11:40:31 -0600
+
 vma (3.0.0+17-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
