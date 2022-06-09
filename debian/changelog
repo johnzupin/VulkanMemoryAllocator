@@ -1,3 +1,11 @@
+vma (3.0.1~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Adam Sawicki ]
+  * Refactored VmaBlockVector::SortByFreeSize to fix compilation on XCode 13.4
+  * Releasing version 3.0.1
+
+ -- john <john@odin>  Thu, 09 Jun 2022 11:24:00 -0600
+
 vma (3.0.0+18~rc1-1lunarg20.04-1) focal; urgency=medium
 
   * UNRELEASED
