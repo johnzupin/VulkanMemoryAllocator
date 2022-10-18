@@ -1,3 +1,9 @@
+vma (3.0.1~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  * UNRELEASED
+
+ -- john <john@odin>  Tue, 18 Oct 2022 14:57:53 -0600
+
 vma (3.0.1~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Adam Sawicki ]
