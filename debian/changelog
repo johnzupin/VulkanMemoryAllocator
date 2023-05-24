@@ -1,3 +1,122 @@
+vma (3.0.1+79~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Alex ]
+  * fix typos
+
+  [ Monika0000 ]
+  * fix re-defines
+
+  [ Rémi Verschelde ]
+  * Convert VMA line endings to Unix style (LF)
+  * Strip trailing whitespace in code files
+
+  [ Adam Sawicki ]
+  * Improved documentation regarding selecting Vulkan version
+
+  [ Pierre Narvor ]
+  * [cmake] Updated installation process to use modern CMake targets
+
+  [ Attractadore ]
+  * Fix windows.h not found when cross compiling on Linux
+
+  [ Adam Sawicki ]
+  * Added missing mutex when unmapping memory.
+
+  [ Max Rodriguez ]
+  * quick_start.html: Small grammar fix under 'Selecting Vulkan version' section
+  * Revert "quick_start.html: Small grammar fix under 'Selecting Vulkan version' section"
+  * docs: Fixed a typo under 'Selecting Vulkan version' section
+
+  [ rumblehhh ]
+  * Fix various typos
+
+  [ Jonliu1993 ]
+  * Add vcpkg installation instructions
+
+  [ Adam Sawicki ]
+  * Fixes in README.md after adding information about vcpkg
+  * A fix for vcpkg in REAEDME.md
+  * Added function vmaCreateAliasingBuffer2, vmaCreateAliasingImage2 with new parameter allocationLocalOffset
+  * Changed implementation of vma_aligned_alloc to only use aligned_alloc when C++17 is enabled, where the function is defined.
+  * Reordered macro definitions in the file to fix compilation on Linux
+
+  [ Tiago Chaves ]
+  * Fix minor typos in documentation
+
+  [ Pavel Rojtberg ]
+  * allow building against vulkan 1.2 headers
+
+  [ qbojj ]
+  * fix typo in specification of VmaAlignDown
+
+  [ Russell Greene ]
+  * Fix build for iOS
+
+  [ Riku Palomäki ]
+  * Remove extra semicolons, fixes build with -Wextra-semi
+
+  [ Adam Sawicki ]
+  * Minor fix in documentation
+  * Internal refactoring for compatibility with 32-bit
+
+  [ manaskulkarni ]
+  * BindBufferMemory, BindImageMemory - Return VK_ERROR_UNKNOWN for unknown allocation type
+
+  [ Adam Sawicki ]
+  * Added usage of PROJECT_IS_TOP_LEVEL around find_package in CMakeLists.txt
+  * Fixing CMakeLists.txt for older Cmake
+  * Split macros into separate VMA_DEBUG_LOG and VMA_DEBUG_LOG_FORMAT
+  * Removed unused local variables unusedRangeSize
+  * Refactored some switch statements
+  * Fixed potential integer overflow in VmaAllocator_T::AllocateMemoryOfType when maxMemoryAllocationCount Vulkan limit has high value
+  * Further fixes in CMakeLists.txt
+  * Fixes in CMakeLists.txt regarding Doxygen usage
+
+  [ Juan Ramos ]
+  * Fix endif()
+  * Specify CXX as the language being used for the project
+  * MSVC cleanup
+
+  [ Denis Orlov ]
+  * Fix atomic type used in AtomicTransactionalIncrement
+  * Fix builds on Linux CI
+
+  [ John Zupin ]
+  * packaging: debian: update copyright
+
+  [ Adam Sawicki ]
+  * Added missing #include <cstdio>
+  * Added missing vmaFlushAllocation in documentation
+
+  [ Jeroen Bakker ]
+  * Fix compilation warning.
+
+  [ Vladislav Belov ]
+  * Fixes uninitialized vkGetPhysicalDeviceMemoryProperties2KHR during ImportVulkanFunctions_Custom.
+
+  [ Adam Sawicki ]
+  * Further fixes to importing function vkGetPhysicalDeviceMemoryProperties2 / vkGetPhysicalDeviceMemoryProperties2KHR
+  * GpuMemDumpVis.py: Fixed division by zero error when only custom pools are used
+  * GpuMemDumpVis.py: Updated version number
+  * Fixes for some compiler warnings
+  * Defined VMA_FALLTHROUGH to fix more compiler warnings
+  * Fixed usage of VMA_FALLTHROUGH
+  * Improved documentation chapter "Resource aliasing (overlap)"
+
+  [ lawadr ]
+  * Change __alignof to alignof
+
+  [ Stephan Hartmann ]
+  * IWYU: add cstdio for snprintf in vk_mem_alloc.h
+
+  [ Adam Sawicki ]
+  * Revert "Merge pull request #325 from lawadr/use-alignof"
+  * Fix in VmaDefragmentationContext_T::CounterStatus
+  * Fixed bug in VmaDefragmentationContext_T::ComputeDefragmentation_Extensive
+  * Updated Doxyfile for Doxygen 1.9.6
+
+ -- john <john@odin>  Wed, 24 May 2023 09:52:42 -0600
+
 vma (3.0.1~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Adam Sawicki ]
