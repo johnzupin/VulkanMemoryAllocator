@@ -25,9 +25,15 @@
 
 #ifdef _WIN32
 
-#define NOMINMAX
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+#if !defined(NOMINMAX)
+    #define NOMINMAX
+#endif
+
+#if !defined(WIN32_LEAN_AND_MEAN)
+    #define WIN32_LEAN_AND_MEAN
+#endif
+
+#include <windows.h>
 #if !defined(VK_USE_PLATFORM_WIN32_KHR)
     #define VK_USE_PLATFORM_WIN32_KHR
 #endif // #if !defined(VK_USE_PLATFORM_WIN32_KHR)
@@ -76,6 +82,7 @@ include all public interface declarations. Example:
 #pragma warning(disable: 4100) // unreferenced formal parameter
 #pragma warning(disable: 4189) // local variable is initialized but not referenced
 #pragma warning(disable: 4324) // structure was padded due to alignment specifier
+#pragma warning(disable: 4820) // 'X': 'N' bytes padding added after data member 'X'
 
 #endif  // #ifdef _MSVC_LANG
 
