@@ -1,19 +1,17 @@
-set(VMA_LIBRARY_SOURCE_FILES
-    VmaUsage.cpp
-    VmaUsage.h
-    "${PROJECT_SOURCE_DIR}/include/vk_mem_alloc.h"
-)
-
-# Visual Studio only debugger symbols
-if(WIN32 AND ${CMAKE_GENERATOR} MATCHES "Visual Studio.*")
-    set(VMA_LIBRARY_SOURCE_FILES ${VMA_LIBRARY_SOURCE_FILES} vk_mem_alloc.natvis)
-endif()
-
 set(CMAKE_DEBUG_POSTFIX d)
 set(CMAKE_RELWITHDEBINFO_POSTFIX rd)
 set(CMAKE_MINSIZEREL_POSTFIX s)
 
-add_library(VulkanMemoryAllocator ${VMA_LIBRARY_SOURCE_FILES})
+add_library(VulkanMemoryAllocator
+    VmaUsage.cpp
+    VmaUsage.h
+    ${PROJECT_SOURCE_DIR}/include/vk_mem_alloc.h
+)
+
+if (MSVC)
+    # Provides MSVC users nicer debugging support
+    target_sources(VulkanMemoryAllocator PRIVATE ${CMAKE_CURRENT_LIST_DIR}/vk_mem_alloc.natvis)
+endif()
 
 set_target_properties(
     VulkanMemoryAllocator PROPERTIES
@@ -24,7 +22,9 @@ set_target_properties(
     CXX_STANDARD_REQUIRED ON
 )
 
-target_include_directories(VulkanMemoryAllocator PUBLIC "${PROJECT_SOURCE_DIR}/include")
+target_include_directories(VulkanMemoryAllocator PUBLIC 
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+)
 
 # Only link to Vulkan if static linking is used
 if(${VMA_STATIC_VULKAN_FUNCTIONS})
@@ -44,8 +44,7 @@ target_compile_definitions(
     VMA_RECORDING_ENABLED=$<BOOL:${VMA_RECORDING_ENABLED}>
 )
 
-install(TARGETS VulkanMemoryAllocator DESTINATION "lib")
-install(FILES "${PROJECT_SOURCE_DIR}/include/vk_mem_alloc.h" DESTINATION "include")
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/install_target.cmake)
 
 if(VMA_BUILD_SAMPLE)
     if(WIN32)
@@ -62,19 +61,18 @@ if(VMA_BUILD_SAMPLE)
         add_executable(VmaSample ${VMA_SAMPLE_SOURCE_FILES})
 		add_dependencies(VmaSample VulkanMemoryAllocator VmaSampleShaders)
 		
-        # Visual Studio specific settings
-        if(${CMAKE_GENERATOR} MATCHES "Visual Studio.*")
+        if(MSVC)
             # Use Unicode instead of multibyte set
             add_compile_definitions(UNICODE _UNICODE)
             
-            # Set VmaSample as startup project
-            set_property(DIRECTORY "${PROJECT_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT "VmaSample")
-
             # Add C++ warnings and security checks
-            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive- /sdl /W3")
+            add_compile_options(/permissive- /sdl /W3)
             
             # Enable multithreaded compiling
             target_compile_options(VmaSample PRIVATE "/MP")
+
+            # Set VmaSample as startup project
+            set_property(DIRECTORY "${PROJECT_SOURCE_DIR}" PROPERTY VS_STARTUP_PROJECT "VmaSample")
 
             # Set working directory for Visual Studio debugger
             set_target_properties(
