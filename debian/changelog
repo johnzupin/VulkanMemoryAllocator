@@ -1,3 +1,41 @@
+vma (3.0.1+105~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Adam Sawicki ]
+  * A fix in VmaBlockMetadata_TLSF::CreateAllocationRequest
+  * Switched src/CMakeLists.txt to use C++17 by default to resolve issues with aligned_alloc
+
+  [ Robin Quint ]
+  * Added VMA_EXTENDS_VK_STRUCT
+  * Added small documentation
+
+  [ Alexandre Bouvier ]
+  * cmake: always add vulkan headers dir
+  * cmake: use find_dependency
+
+  [ Juan Ramos ]
+  * Make VulkanMemoryAllocator a header only library
+
+  [ Tim Lobner ]
+  * fixed copy paste error in vulkan sample
+
+  [ Adam Sawicki ]
+  * Fixes in Cmake scripts after merging #350
+  * Fixes in Cmake scripts after merging #350 (2)
+
+  [ Juan Ramos ]
+  * cmake: Use share instead of DATADIR for CMake config files
+  * Fixup include of "vk_mem_alloc.h"
+  * git: ignore .vscode directory
+
+  [ Adam Sawicki ]
+  * Added callback VmaDefragmentationInfo::pfnBreakCallback that allows to break long execution of vmaBeginDefragmentation
+  * Refactoring in FindMemoryPreferences
+
+  [ Alexandre Bouvier ]
+  * cmake: install docs
+
+ -- john <john@odin>  Wed, 16 Aug 2023 11:48:10 -0600
+
 vma (3.0.1+79~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Alex ]
