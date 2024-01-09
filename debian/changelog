@@ -1,3 +1,33 @@
+vma (3.0.1+123~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Turánszki János ]
+  * added Wicked Engine to software list
+
+  [ Adam Sawicki ]
+  * README: Updated link to the new C++ wrapper
+  * Fixed main memory type selection algorithm for Raspberry Pi
+
+  [ manaskulkarni ]
+  * Make C++20 features optional
+
+  [ Sergey Kosarevsky ]
+  * Added LightweightVK
+
+  [ Adam Sawicki ]
+  * Fixed signed/unsigned mismatch in FindMemoryPreferences
+  * Fix in VmaJsonWriter::ContinueString
+  * Fixed memory leak in VmaPool_T::~VmaPool_T
+  * Fixed GpuMemDumpVis.py to not use deprecated Pillow function textsize
+  * GpuMemDumpVis/README.md: Added warning about aliasing not supported
+  * Added function vmaGetAllocationInfo2, structure VmaAllocationInfo2
+  * Added VMA_ASSERT_LEAK macro
+  * More fixes based on #385
+
+  [ eszlari ]
+  * README.md: add Blender ref
+
+ -- john <john@odin>  Tue, 09 Jan 2024 16:11:53 -0700
+
 vma (3.0.1+105~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Adam Sawicki ]
