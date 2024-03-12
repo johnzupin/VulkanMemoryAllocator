@@ -1,3 +1,55 @@
+vma (3.0.1+174~rc1-1lunarg20.04-1) focal; urgency=medium
+
+  [ Adam Sawicki ]
+  * Updated date in copyright headers
+  * GpuMemDumpVis: Fixed VK_IMAGE_USAGE_STORAGE_BIT to be treated like COLOR_ATTACHMENT
+  * Bumped GpuMemDumpVis version
+  * Replaced "%llu" with "%" PRIu64
+  * Fixed VK_ERROR_UNKNOWN -> VK_ERROR_UNKNOWN_COPY
+  * Added macro VMA_LEAK_LOG_FORMAT
+  * Fixed documentation generation with respect to VMA_EXTENDS_VK_STRUCT macro
+  * Updated Doxyfile to version 1.10.0
+  * README: Added GFXReconstruct to the list of known uses
+  * Minor improvements in documentation
+  * Added documentation chapter "When not to use custom pools"
+  * Added support for VK_KHR_maintenance4 extension
+  * Fixed documentation of VmaAllocatorCreateInfo::vulkanApiVersion
+  * Removed commented code
+  * Added usage of std::countr_zero, std::countl_zero from C++20 when available
+  * Updated CHANGELOG.md
+  * Multiple improvements in documentation
+  * Added functions vmaCopyMemoryToAllocation, vmaCopyAllocationToMemory
+  * Minor fix in the documentation
+
+  [ David Neto ]
+  * Use format specifier PRIu64 only with uint64_t types
+
+  [ Adam Sawicki ]
+  * Fixes in calls to VMA_DEBUG_LOG_FORMAT, using PRIu32 for compatibility
+
+  [ serboupal ]
+  * Remove semicolon outside function
+
+  [ Adam Sawicki ]
+  * Fixed bug in VmaBlockMetadata_Linear::PrintDetailedMap
+  * Added VMA_LEN_IF_NOT_NULL decoration to the new functions vmaCopyMemoryToAllocation, vmaCopyAllocationToMemory
+
+  [ Frank Richter ]
+  * Attempt to document leak detection aids
+
+  [ Adam Sawicki ]
+  * Rebuilt the documentation
+  * Added Baldur's Gate III to the list of known users
+  * Fixed VmaDeviceMemoryBlock::Map for mapping hysteresis to work correctly when the mapping fails
+  * Added Cyberpunk 2077 to the list of known users
+  * Fixed documentation generation for function vmaBuildStatsString, vmaFreeStatsString
+  * Added comprehensive tests for all kinds of statistics
+  * Fix in VmaBlockMetadata_Linear::CreateAllocationRequest for too large allocations
+  * Fixes in importing of vkGetPhysicalDeviceMemoryProperties2[KHR] function
+  * Added support for VK_KHR_maintenance5 extension
+
+ -- john <john@odin>  Tue, 12 Mar 2024 13:50:01 -0600
+
 vma (3.0.1+123~rc1-1lunarg20.04-1) focal; urgency=medium
 
   [ Turánszki János ]
