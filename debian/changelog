@@ -1,3 +1,11 @@
+vma (3.0.1+175~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Adam Sawicki ]
+  * Fix for undeclared identifier VK_STRUCTURE_TYPE_DEVICE_IMAGE_MEMORY_REQUIREMENTS
+  * More fixes for undeclared identifiers with old Vulkan SDK
+
+ -- john <john@odin>  Tue, 07 May 2024 11:22:12 -0600
+
 vma (3.0.1+174~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Adam Sawicki ]
