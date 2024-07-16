@@ -1,3 +1,14 @@
+vma (3.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Luiz G. Mugnaini A. ]
+  * Fix documentation typos
+
+  [ Adam Sawicki ]
+  * Fix in TestMappingHysteresis
+  * Version 3.1.0
+
+ -- john <john@odin>  Tue, 16 Jul 2024 14:48:35 -0600
+
 vma (3.0.1+175~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Adam Sawicki ]
