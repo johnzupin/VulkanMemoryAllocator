@@ -1,3 +1,87 @@
+vma (3.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ manaskulkarni ]
+  * Make Vulkan include optional
+
+  [ Johannes Schneider ]
+  * Fix swapchain semaphore handling
+
+  [ Alexandre Bouvier ]
+  * cmake: add package version file
+
+  [ Adam Sawicki ]
+  * Revert "Merge pull request #425 from abouvier/cmake-version"
+  * Reapply "Merge pull request #425 from abouvier/cmake-version"
+
+  [ Johannes Schneider ]
+  * Improve sample code for advanced data uploading in docs
+
+  [ Adam Sawicki ]
+  * Removed invalid VMA_FALLTHROUGH from VmaAllocator_T::Map
+
+  [ Johannes Schneider ]
+  * Remove mention of deprecated CSV recording feature
+  * Remove unused code
+  * Fix spelling mistake
+  * Improve SetDebugUtilsObjectName
+  * Use SetDebugUtilsObjectName in sample app
+  * Add requested changes to SetDebugUtilsObjectName
+
+  [ scribam ]
+  * Allow external control of whether to install
+
+  [ Adam Sawicki ]
+  * Updated documentation - mentioned VMA_LEAK_LOG_FORMAT
+
+  [ Howard Su ]
+  * Remove unused static function swap
+
+  [ Adam Sawicki ]
+  * Fixed language mistake in the documentation
+
+  [ Ilya Doroshenko ]
+  * basic outline of the Win32 handle extension
+  * made handle atomic
+  * added vkGetMemoryWin32HandleKHR to functions
+  * extra safety
+  * New guard, fixed ABI issues
+  * documentation
+  * dynamic fetching of function
+  * Tests, documentation and fix
+  * extension enabled
+  * Fixed test not compiling shaders
+
+  [ Adam Sawicki ]
+  * Fixes after merge for VK_KHR_external_memory_win32 support
+  * Added documentation for VK_KHR_external_memory_win32
+  * Fixed a bug fixing compilation on Linux
+  * Fix for IntelliSense versus SRWLOCK
+
+  [ Ilya Doroshenko ]
+  * dumb error from me
+
+  [ Adam Sawicki ]
+  * Improved documentation about vk_khr_external_memory_win32
+
+  [ Ilya Doroshenko ]
+  * Fix for ABI interop (without VK_KHR_external_memory_win32)
+
+  [ Adam Sawicki ]
+  * Added Qt Project to the list of known uses
+
+  [ asawicki ]
+  * Fixes in multithreading in VmaBlockVector::Free
+
+  [ Carsten Rudolph ]
+  * Fix ineffective error code checks.
+
+  [ Adam Sawicki ]
+  * Added support for Vulkan version 1.4
+  * Updated CHANGELOG.md in preparation for VMA version 3.2.0
+  * Version 3,.2.0
+
+ -- john <john@odin>  Mon, 06 Jan 2025 17:06:30 -0700
+
 vma (3.1.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ Luiz G. Mugnaini A. ]
