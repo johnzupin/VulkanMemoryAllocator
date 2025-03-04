@@ -1,3 +1,19 @@
+vma (3.2.1~rc1-1lunarg22.04-1) jammy; urgency=medium
+
+  [ Adam Sawicki ]
+  * Updated copyright headers to year 2025
+  * Change in ImportVulkanFunctions_Dynamic for loading function vkGetPhysicalDeviceMemoryProperties2
+  * Fixed assert in vmaCreateAllocator for compatibility with Vulkan 1.4
+
+  [ Pavel Gribov ]
+  * Skip TestWin32Handles() if VK_KHR_external_memory_win32 is not present
+
+  [ Adam Sawicki ]
+  * Fixed typo in VmaBlockMetadata_TLSF::Alloc
+  * Version 3.2.1
+
+ -- john <john@odin>  Tue, 04 Mar 2025 11:19:07 -0700
+
 vma (3.2.0~rc1-1lunarg22.04-1) jammy; urgency=medium
 
   [ manaskulkarni ]
